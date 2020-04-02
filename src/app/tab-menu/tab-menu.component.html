@@ -1,0 +1,86 @@
+<section class="tab-menu">
+  <div class="container">  
+    <mat-tab-group>
+      <mat-tab label="Tab 1">
+        <ng-template matTabContent>
+            <div class="tab-content">
+              <input type = "file" file-model = "myFile" style="font-style: italic;"/>
+                <div class="mat-elevation-a 1">
+                  <table mat-table [dataSource]="dataSource">
+                    <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef>Header 1 </th>
+                      <td mat-cell *matCellDef="let element">  </td>
+                    </ng-container>
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Header 2</th>
+                      <td mat-cell *matCellDef="let element"> </td>
+                    </ng-container>
+                    <ng-container matColumnDef="weight">
+                      <th mat-header-cell *matHeaderCellDef>Header 3</th>
+                      <td mat-cell *matCellDef="let element">  </td>
+                    </ng-container>
+                    <ng-container matColumnDef="symbol">
+                      <th mat-header-cell *matHeaderCellDef>Header 4</th>
+                      <td mat-cell *matCellDef="let element">  </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+                  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+              </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Tab 2">
+        <ng-template matTabContent>
+          <div class="tab-content">
+            <div class="row" style="margin-right: 0px;margin-left: 0px;">
+              <div class="col-sm-3">
+                <div class="img-up">
+                  <input type="file" file-model = "myFile" style="font-style: italic;">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="dum-img">
+                  <img src="https://via.placeholder.com/1900x4000.png" alt="">
+                </div>
+              </div>
+              </div>
+            </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Tab 3">
+        <ng-template matTabContent>
+          <div class="tab-content">
+          <button class="add-field">Add field</button>
+          <div class="row" style="margin-left: 0;margin-right: 0;">
+            <div class="col-sm-6">
+              <div class="field">
+                <input type="text" placeholder="name">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="field">
+                <input type="text" placeholder="Email">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="field">
+                <input type="text" placeholder="Mobile number">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="field">
+                <input type="text" placeholder="Date of Birth">
+              </div>
+            </div>
+                <button class="remove">Remove</button>
+            </div>
+            </div>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>
+
